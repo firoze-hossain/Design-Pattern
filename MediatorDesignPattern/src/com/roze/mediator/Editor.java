@@ -11,15 +11,15 @@ import java.awt.*;
 public class Editor implements Mediator {
     private Title title;
     private TextBox textBox;
-    private AddButton addButton;
-    private DeleteButton deleteButton;
-    private SaveButton saveButton;
+    private AddButton add;
+    private DeleteButton del;
+    private SaveButton save;
     private List list;
     private Filter filter;
 
     private JLabel titleLabel = new JLabel("Title:");
-    private JLabel textLabel = new JLabel("Text");
-    private JLabel label = new JLabel("Add or select existing note to proceed");
+    private JLabel textLabel = new JLabel("Text:");
+    private JLabel label = new JLabel("Add or select existing note to proceed...");
 
     @Override
     public void addNewNote(Note note) {
@@ -88,10 +88,10 @@ public class Editor implements Mediator {
         component.setMediator(this);
         switch (component.getName()) {
             case "AddButton":
-                addButton = (AddButton) component;
+                add= (AddButton) component;
                 break;
             case "DelButton":
-                deleteButton = (DeleteButton) component;
+                del = (DeleteButton) component;
                 break;
             case "Filter":
                 filter = (Filter) component;
@@ -108,7 +108,7 @@ public class Editor implements Mediator {
                 });
                 break;
             case "SaveButton":
-                saveButton = (SaveButton) component;
+                save = (SaveButton) component;
                 break;
             case "TextBox":
                 textBox = (TextBox) component;
@@ -125,8 +125,8 @@ public class Editor implements Mediator {
         textLabel.setVisible(!flag);
         title.setVisible(!flag);
         textBox.setVisible(!flag);
-        saveButton.setVisible(!flag);
-        label.setVisible(!flag);
+        save.setVisible(!flag);
+        label.setVisible(flag);
     }
 
     @Override
@@ -150,10 +150,10 @@ public class Editor implements Mediator {
         scrollPane.setPreferredSize(new Dimension(275, 410));
         listPanel.add(scrollPane);
         JPanel buttonPanel = new JPanel();
-        addButton.setPreferredSize(new Dimension(85, 25));
-        buttonPanel.add(addButton);
-        deleteButton.setPreferredSize(new Dimension(85, 25));
-        buttonPanel.add(deleteButton);
+        add.setPreferredSize(new Dimension(85, 25));
+        buttonPanel.add(add);
+        del.setPreferredSize(new Dimension(85, 25));
+        buttonPanel.add(del);
         buttonPanel.setLayout(new FlowLayout());
         left.add(filterPanel);
         left.add(listPanel);
@@ -168,7 +168,7 @@ public class Editor implements Mediator {
         textLabel.setBounds(20, 4, 50, 130);
         textBox.setBorder(new LineBorder(Color.DARK_GRAY));
         textBox.setBounds(20, 80, 595, 410);
-        saveButton.setBounds(270, 535, 80, 25);
+        save.setBounds(270, 535, 80, 25);
         label.setFont(new Font("Verdana", Font.PLAIN, 22));
         label.setBounds(100, 240, 500, 100);
         right.add(label);
@@ -176,7 +176,7 @@ public class Editor implements Mediator {
         right.add(title);
         right.add(textLabel);
         right.add(textBox);
-        right.add(saveButton);
+        right.add(save);
         notes.setLayout(null);
         notes.getContentPane().add(left);
         notes.getContentPane().add(right);
