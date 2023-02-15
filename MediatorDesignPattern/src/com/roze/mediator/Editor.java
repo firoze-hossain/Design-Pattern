@@ -1,8 +1,12 @@
 package com.roze.mediator;
 
 import com.roze.components.*;
+import com.roze.components.Component;
+import com.roze.components.List;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+import java.awt.*;
 
 public class Editor implements Mediator {
     private Title title;
@@ -72,9 +76,11 @@ public class Editor implements Mediator {
         filter.setList(listModel);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void setElementsList(ListModel list) {
-
+        this.list.setModel(list);
+        this.list.repaint();
     }
 
     @Override
@@ -115,11 +121,67 @@ public class Editor implements Mediator {
 
     @Override
     public void hideElements(boolean flag) {
-
+        titleLabel.setVisible(!flag);
+        textLabel.setVisible(!flag);
+        title.setVisible(!flag);
+        textBox.setVisible(!flag);
+        saveButton.setVisible(!flag);
+        label.setVisible(!flag);
     }
 
     @Override
     public void createGUI() {
-
+        JFrame notes = new JFrame("Notes");
+        notes.setSize(960, 600);
+        notes.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        JPanel left = new JPanel();
+        left.setBorder(new LineBorder(Color.BLACK));
+        left.setSize(320, 600);
+        left.setLayout(new BoxLayout(left, BoxLayout.Y_AXIS));
+        JPanel filterPanel = new JPanel();
+        filterPanel.add(new JLabel("Filter:"));
+        filter.setColumns(20);
+        filterPanel.add(filter);
+        filterPanel.setPreferredSize(new Dimension(280, 40));
+        JPanel listPanel = new JPanel();
+        list.setFixedCellWidth(260);
+        listPanel.setSize(320, 470);
+        JScrollPane scrollPane = new JScrollPane(list);
+        scrollPane.setPreferredSize(new Dimension(275, 410));
+        listPanel.add(scrollPane);
+        JPanel buttonPanel = new JPanel();
+        addButton.setPreferredSize(new Dimension(85, 25));
+        buttonPanel.add(addButton);
+        deleteButton.setPreferredSize(new Dimension(85, 25));
+        buttonPanel.add(deleteButton);
+        buttonPanel.setLayout(new FlowLayout());
+        left.add(filterPanel);
+        left.add(listPanel);
+        left.add(buttonPanel);
+        JPanel right = new JPanel();
+        right.setLayout(null);
+        right.setSize(640, 600);
+        right.setLocation(320, 0);
+        right.setBorder(new LineBorder(Color.BLACK));
+        titleLabel.setBounds(20, 4, 50, 20);
+        title.setBounds(60, 5, 555, 20);
+        textLabel.setBounds(20, 4, 50, 130);
+        textBox.setBorder(new LineBorder(Color.DARK_GRAY));
+        textBox.setBounds(20, 80, 595, 410);
+        saveButton.setBounds(270, 535, 80, 25);
+        label.setFont(new Font("Verdana", Font.PLAIN, 22));
+        label.setBounds(100, 240, 500, 100);
+        right.add(label);
+        right.add(titleLabel);
+        right.add(title);
+        right.add(textLabel);
+        right.add(textBox);
+        right.add(saveButton);
+        notes.setLayout(null);
+        notes.getContentPane().add(left);
+        notes.getContentPane().add(right);
+        notes.setResizable(false);
+        notes.setLocationRelativeTo(null);
+        notes.setVisible(true);
     }
 }
