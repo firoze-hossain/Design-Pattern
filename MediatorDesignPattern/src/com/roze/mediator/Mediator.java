@@ -5,7 +5,7 @@ import com.roze.components.Component;
 import javax.swing.*;
 
 public interface Mediator {
-    void addNote(Note note);
+    void addNewNote(Note note);
     void deleteNote();
     void getInfoFromList(Note note);
     void saveChanges();
