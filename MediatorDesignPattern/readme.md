@@ -1,6 +1,6 @@
 <b>What is Mediator Design Pattern==></b></br>
 The Mediator Design pattern is part of the Behavioral Design Pattern Family, it helps to reduce tight coupling between the objects or chaotic dependencies between the objects.</br>
-[mediator](https://refactoring.guru/images/patterns/content/mediator/mediator.png?raw=true)
+[mediator](https://github.com/firoze-hossain/Design-Pattern/blob/master/MediatorDesignPattern/src/images/mediator.png?raw=true)
 </br></br>
 <b>Definition:</b></br>
 The Mediator pattern is a design pattern that lets us to reduce chaotic dependencies between objects.
