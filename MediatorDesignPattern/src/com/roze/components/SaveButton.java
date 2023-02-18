@@ -22,8 +22,9 @@ public class SaveButton extends JButton implements Component {
         mediator.saveChanges();
     }
 
+    @Override
     public String getName() {
-        return "saveButton";
+        return "SaveButton";
     }
 }
 

@@ -11,10 +11,9 @@ public class Filter extends JTextField implements Component {
     private Mediator mediator;
     private ListModel listModel;
 
-    public Filter() {
+    public Filter() {}
 
-    }
-
+    @Override
     public void setMediator(Mediator mediator) {
         this.mediator = mediator;
     }
@@ -33,10 +32,12 @@ public class Filter extends JTextField implements Component {
         if (listModel == null) {
             return;
         }
+
         if (s.equals("")) {
             mediator.setElementsList(listModel);
             return;
         }
+
         ArrayList<Note> notes = new ArrayList<>();
         for (int i = 0; i < listModel.getSize(); i++) {
             notes.add((Note) listModel.getElementAt(i));

@@ -17,7 +17,6 @@ public class List extends JList implements Component {
         this.setLayoutOrientation(JList.VERTICAL);
         Thread thread = new Thread(new Hide(this));
         thread.start();
-
     }
 
     @Override
@@ -38,13 +37,11 @@ public class List extends JList implements Component {
         try {
             LIST_MODEL.remove(index);
             mediator.sendToFilter(LIST_MODEL);
-        } catch (ArrayIndexOutOfBoundsException e) {
-
-        }
+        } catch (ArrayIndexOutOfBoundsException ignored) {}
     }
 
     public Note getCurrentElement() {
-        return (Note) getSelectedValue();
+        return (Note)getSelectedValue();
     }
 
     @Override

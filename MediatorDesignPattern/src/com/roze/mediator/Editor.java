@@ -21,6 +21,48 @@ public class Editor implements Mediator {
     private JLabel textLabel = new JLabel("Text:");
     private JLabel label = new JLabel("Add or select existing note to proceed...");
 
+    /**
+     * Here the registration of components by the mediator.
+     */
+    @Override
+    public void registerComponent(Component component) {
+        component.setMediator(this);
+        switch (component.getName()) {
+            case "AddButton":
+                add = (AddButton)component;
+                break;
+            case "DelButton":
+                del = (DeleteButton)component;
+                break;
+            case "Filter":
+                filter = (Filter)component;
+                break;
+            case "List":
+                list = (List)component;
+                this.list.addListSelectionListener(listSelectionEvent -> {
+                    Note note = (Note)list.getSelectedValue();
+                    if (note != null) {
+                        getInfoFromList(note);
+                    } else {
+                        clear();
+                    }
+                });
+                break;
+            case "SaveButton":
+                save = (SaveButton)component;
+                break;
+            case "TextBox":
+                textBox = (TextBox)component;
+                break;
+            case "Title":
+                title = (Title)component;
+                break;
+        }
+    }
+
+    /**
+     * Various methods to handle requests from particular components.
+     */
     @Override
     public void addNewNote(Note note) {
         title.setText("");
@@ -46,9 +88,7 @@ public class Editor implements Mediator {
             note.setName(title.getText());
             note.setText(textBox.getText());
             list.repaint();
-        } catch (NullPointerException e) {
-
-        }
+        } catch (NullPointerException ignored) {}
     }
 
     @Override
@@ -60,9 +100,7 @@ public class Editor implements Mediator {
                 note.setName(note.getName() + "*");
             }
             list.repaint();
-        } catch (NullPointerException e) {
-
-        }
+        } catch (NullPointerException ignored) {}
     }
 
     @Override
@@ -81,42 +119,6 @@ public class Editor implements Mediator {
     public void setElementsList(ListModel list) {
         this.list.setModel(list);
         this.list.repaint();
-    }
-
-    @Override
-    public void registerComponent(Component component) {
-        component.setMediator(this);
-        switch (component.getName()) {
-            case "AddButton":
-                add= (AddButton) component;
-                break;
-            case "DelButton":
-                del = (DeleteButton) component;
-                break;
-            case "Filter":
-                filter = (Filter) component;
-                break;
-            case "List":
-                list = (List) component;
-                this.list.addListSelectionListener(listSelectionEvent -> {
-                    Note note = (Note) list.getSelectedValue();
-                    if (note != null) {
-                        getInfoFromList(note);
-                    } else {
-                        clear();
-                    }
-                });
-                break;
-            case "SaveButton":
-                save = (SaveButton) component;
-                break;
-            case "TextBox":
-                textBox = (TextBox) component;
-                break;
-            case "Title":
-                title = (Title) component;
-                break;
-        }
     }
 
     @Override
