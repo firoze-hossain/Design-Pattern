@@ -16,7 +16,7 @@ The implementation of Singleton pattern has always been a controversial topic am
 <b>Forms of Singleton</b><br/>
 There are two forms of singleton design pattern:<br/>
 
-==>Eager Instantiation: creation of instance at load time.<br/>
+==><b>Eager Instantiation:</b> creation of instance at load time.<br/>
 In eager initialization, the instance of Singleton Class is created at the time of class loading, this is the easiest method to create a Singleton class.
 
 By making the constructor as private you are not allowing other class to create a new instance of the class you want to create the Singleton. 
@@ -25,7 +25,7 @@ This approach has one drawback. Here instance is created even though client appl
 Singleton class in creating a database connection or creating a socket. This may cause the memory leak problem. The solution is to create the new instance of the class, when needed.
 This can be achieved by Lazy Initialization method.<br/>
 
-==>Lazy Instantiation: creation of instance when required.<br/>
+==><b>Lazy Instantiation:</b> creation of instance when required.<br/>
 Opposite to Eager initialization, here you are going to initialize new instance of the class in getInstance() method it self. This method will check if there is any instance of that class is already created? If yes, then our method (getInstance()) will return that old instance and if not then it creates a new instance of the singleton class in JVM and returns that instance.
 This approach is called as Lazy initialization.<br/>
 
@@ -44,5 +44,6 @@ To create the singleton class, we need to have static member of class, private c
 ==><b>Static member:</b> It gets memory only once because of static, itcontains the instance of the Singleton class.<br/>
 ==><b>Private constructor:</b>  It will prevent to instantiate the Singleton class from outside the class.<br/>
 ==><b>Static factory method:</b>  This provides the global point of access to the Singleton object and returns the instance to the caller.<br/>
-<b>Advantage of Singleton design pattern</b><br/>
+<br/><br/>
+<b>Advantage of Singleton design pattern</b><br/><br/>
 ==>Saves memory because object is not created at each request. Only single instance is reused again and again.<br/>
