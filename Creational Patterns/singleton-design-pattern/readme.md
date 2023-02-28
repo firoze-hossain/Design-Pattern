@@ -1,6 +1,6 @@
 <h2>Singleton</h2><br/>
 <b>Singleton</b> is a creational design pattern, which ensures that only one object of its kind exists and provides a single point of access to it for any other code.<br/>
-<img src="https://github.com/firoze-hossain/Design-Pattern/blob/master/Structural%20Patterns/adapter-design-pattern/out/production/adapter-design-pattern/image/adapter.png" alt="Singleton" title="singleton"><br/>
+<img src="https://github.com/firoze-hossain/Design-Pattern/blob/master/Creational%20Patterns/singleton-design-pattern/src/image/singleton.png" alt="Singleton" title="singleton"><br/>
 <b>Purpose of Singleton</b><br/>
 The purpose of the Singleton class is to control object creation, limiting the number of objects to only one.
 The singleton allows only one entry point to create the new instance of the class.<br/>
@@ -33,7 +33,7 @@ This approach is called as Lazy initialization.<br/>
 ==>Singleton pattern is mostly used in multi-threaded and database applications. 
 It is used in logging, caching, thread pools, configuration settings etc.<br/>
 <b>Structure</b><br/>
-<img src="https://github.com/firoze-hossain/Design-Pattern/blob/master/Structural%20Patterns/adapter-design-pattern/out/production/adapter-design-pattern/image/adapter.png" alt="Structure" title="structure"><br/>
+<img src="https://github.com/firoze-hossain/Design-Pattern/blob/master/Creational%20Patterns/singleton-design-pattern/src/image/structure.png" alt="Structure" title="structure"><br/>
 The Singleton class declares the static method getInstance that returns the same instance of its own class.<br/>
 The Singleton’s constructor should be hidden from the client code.
 Calling the getInstance method should be the only way of getting the Singleton object.<br/>
