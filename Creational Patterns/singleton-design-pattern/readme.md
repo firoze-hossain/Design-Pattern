@@ -44,6 +44,6 @@ To create the singleton class, we need to have static member of class, private c
 ==><b>Static member:</b> It gets memory only once because of static, itcontains the instance of the Singleton class.<br/>
 ==><b>Private constructor:</b>  It will prevent to instantiate the Singleton class from outside the class.<br/>
 ==><b>Static factory method:</b>  This provides the global point of access to the Singleton object and returns the instance to the caller.<br/>
-<br/><br/>
-<b>Advantage of Singleton design pattern</b><br/><br/>
+<br/>
+<b>Advantage of Singleton design pattern</b><br/>
 ==>Saves memory because object is not created at each request. Only single instance is reused again and again.<br/>
