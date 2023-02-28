@@ -32,6 +32,7 @@ This approach is called as Lazy initialization.<br/>
 <b>Usage of Singleton design pattern</b><br/>
 ==>Singleton pattern is mostly used in multi-threaded and database applications. 
 It is used in logging, caching, thread pools, configuration settings etc.<br/>
+<br/>
 <b>Structure</b><br/>
 <img src="https://github.com/firoze-hossain/Design-Pattern/blob/master/Creational%20Patterns/singleton-design-pattern/src/image/structure.png" alt="Structure" title="structure"><br/>
 The Singleton class declares the static method getInstance that returns the same instance of its own class.<br/>
