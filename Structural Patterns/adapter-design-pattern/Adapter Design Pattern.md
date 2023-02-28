@@ -6,13 +6,13 @@ The object that joins these unrelated interface is called an Adapter.<br/>
 An Adapter pattern acts as a connector between two incompatible interfaces that otherwise cannot be connected directly.
 An Adapter wraps an existing class with a new interface so that it becomes compatible with the client’s interface.<br/>
 
-<img src="https://github.com/firoze-hossain/Design-Pattern/blob/master/adapter-design-pattern/src/image/adapter.png" alt="Adapter" title="adapter"><br/>
+<img src="https://github.com/firoze-hossain/Design-Pattern/blob/master/Structural%20Patterns/adapter-design-pattern/out/production/adapter-design-pattern/image/adapter.png" alt="Adapter" title="adapter"><br/>
 
 The main motive behind using this pattern is to convert an existing interface into another interface that the client expects.
 It’s usually implemented once the application is designed.<br/>
 
 <b>Example of Adapter Pattern</b><br/>
-<img src="https://github.com/firoze-hossain/Design-Pattern/blob/master/adapter-design-pattern/src/image/adapteruml.jpg" alt="AdapterUML" title="adapteruml"><br/>
+<img src="https://github.com/firoze-hossain/Design-Pattern/blob/master/Structural%20Patterns/adapter-design-pattern/out/production/adapter-design-pattern/image/adapteruml.jpg" alt="AdapterUML" title="adapteruml"><br/>
 
 <b>UML for Adapter Pattern:</b><br/>
 There are the following specifications for the adapter pattern:<br/>
