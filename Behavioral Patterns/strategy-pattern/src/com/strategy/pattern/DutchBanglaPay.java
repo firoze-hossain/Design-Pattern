@@ -14,8 +14,8 @@ public class DutchBanglaPay implements PayStrategy {
     private boolean signedIn;
 
     static {
-        Data_Base.put("firoze.hossain@yahoo.com", "firoze89");
-        Data_Base.put("firoze@gmail.com", "firoze90");
+        Data_Base.put("firoze89", "firoze.hossain@yahoo.com");
+        Data_Base.put("firoze90", "firoze@gmail.com");
     }
 
     @Override
