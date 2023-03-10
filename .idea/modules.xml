@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Design-Pattern.iml" filepath="$PROJECT_DIR$/Design-Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Design Pattern.iml" filepath="$PROJECT_DIR$/.idea/Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MediatorDesignPattern/MediatorDesignPattern.iml" filepath="$PROJECT_DIR$/MediatorDesignPattern/MediatorDesignPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/adapter-design-pattern/adapter-design-pattern.iml" filepath="$PROJECT_DIR$/adapter-design-pattern/adapter-design-pattern.iml" />
     </modules>
   </component>
 </project>
