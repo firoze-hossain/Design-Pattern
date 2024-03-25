@@ -1,5 +1,7 @@
 package com.roze.creationalPatterns.factoryDesignPattern;
 
+//we don't need to know how factory build the os
+//we just need the specific operating system
 public class OperatingSystemFactory {
     //we don't the operating system factory or object of it
     // we need the product of it
