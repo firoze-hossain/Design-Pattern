@@ -14,7 +14,6 @@ public class NewsAgencyObservable {
     public void removeObserver(Channel channel) {
         this.channels.remove(channel);
     }
-
     public void setNews(String news) {
         this.news = news;
         for (Channel channel : this.channels) {
